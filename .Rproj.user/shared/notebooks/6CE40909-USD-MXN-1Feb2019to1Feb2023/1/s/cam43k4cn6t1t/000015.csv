@@ -1,0 +1,3 @@
+"0","# Use this R-Chunk to clean & wrangle your data!"
+"0","data$Date <- as.Date(data$Date, ""%m/%d/%Y"")"
+"0","data"

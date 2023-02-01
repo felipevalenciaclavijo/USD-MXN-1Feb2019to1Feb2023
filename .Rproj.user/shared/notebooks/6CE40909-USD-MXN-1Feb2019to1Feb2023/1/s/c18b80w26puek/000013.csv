@@ -1,0 +1,2 @@
+"0","# Import datasets"
+"0","data <- read.csv(""https://github.com/felipevalenciaclavijo/USD-MXN-1Feb2019to1Feb2023/blob/main/USD_MXN%20Historical%20Data.csv?raw=true"")"

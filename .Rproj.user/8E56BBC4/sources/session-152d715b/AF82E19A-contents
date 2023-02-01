@@ -1,5 +1,6 @@
 ---
 title: "A 5-year comparison of local currency value in Mexico compared to the US dollar"
+subtitle : "From February 1st, 2019 to February 1st, 2023"
 author: "Felipe Valencia"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
@@ -25,26 +26,38 @@ library(tidyverse)
 ```
 
 ```{r load_data}
-# Use this R-Chunk to import all your datasets!
-
+# Import datasets
+data <- read.csv("https://github.com/felipevalenciaclavijo/USD-MXN-1Feb2019to1Feb2023/blob/main/USD_MXN%20Historical%20Data.csv?raw=true")
 ```
 
 ## Background
 
-_Place Task Background Here_
+_Create and include a line graph showing a 5-year comparison of local currency value in Mexico compared to the US dollar_
 
 ## Data Wrangling
 
+Fix date format.
+
 ```{r tidy_data}
 # Use this R-Chunk to clean & wrangle your data!
-
+data$Date <- as.Date(data$Date, "%m/%d/%Y")
 ```
 
 ## Data Visualization
 
 ```{r plot_data}
 # Use this R-Chunk to plot & visualize your data!
+price_over_time <- ggplot(data = data, mapping = aes(x = Date, y = Price)) +
+  geom_line(linewidth = 0.8) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = .5),
+        plot.subtitle = element_text(hjust = .5)) +
+  labs(title = "Daily USD/MXN - US Dollar Mexican Peso Evolution", subtitle = "From February 1st, 2019 to February 1st, 2023", y = "Price (MXN)", caption = "Data from Investing.com")
+price_over_time
 
+# ggsave("Daily_USD-MXN_5years.png")
 ```
 
 ## Conclusions
+
+We can see the evolution of the USD/MXN for the last 5 years and we notice a huge increase in ealry 2020, perfectly aligning with Covid-19 outbreak.

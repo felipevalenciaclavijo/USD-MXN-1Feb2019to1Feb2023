@@ -2,7 +2,7 @@
 title: "A 5-year comparison of local currency value in Mexico compared to the US dollar"
 subtitle : "From February 1st, 2019 to February 1st, 2023"
 author: "Felipe Valencia"
-date: "`r format(Sys.time(), '%B %d, %Y')`"
+date: "febrero 01, 2023"
 output:
   html_document:  
     keep_md: true
@@ -14,18 +14,12 @@ output:
     fig_align: 'center'
 ---
 
-```{r, echo=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
-```
 
-```{r load_libraries, include=FALSE}
-# Use this R-Chunk to load all your libraries!
-#install.packages("tidyverse") # run this line once in console to get package
-library(tidyverse)
 
-```
 
-```{r load_data}
+
+
+```r
 # Import datasets
 data <- read.csv("https://github.com/felipevalenciaclavijo/USD-MXN-1Feb2019to1Feb2023/blob/main/USD_MXN%20Historical%20Data.csv?raw=true")
 ```
@@ -38,14 +32,16 @@ _Create and include a line graph showing a 5-year comparison of local currency v
 
 Fix date format.
 
-```{r tidy_data}
+
+```r
 # Use this R-Chunk to clean & wrangle your data!
 data$Date <- as.Date(data$Date, "%m/%d/%Y")
 ```
 
 ## Data Visualization
 
-```{r plot_data}
+
+```r
 # Use this R-Chunk to plot & visualize your data!
 price_over_time <- ggplot(data = data, mapping = aes(x = Date, y = Price)) +
   geom_line(linewidth = 0.8) +
@@ -54,7 +50,11 @@ price_over_time <- ggplot(data = data, mapping = aes(x = Date, y = Price)) +
         plot.subtitle = element_text(hjust = .5)) +
   labs(title = "Daily USD/MXN - US Dollar Mexican Peso Evolution", subtitle = "From February 1st, 2019 to February 1st, 2023", y = "Price (MXN)", caption = "Data from Investing.com")
 price_over_time
+```
 
+![](USD-MXN-1Feb2019to1Feb2023_files/figure-html/plot_data-1.png)<!-- -->
+
+```r
 # ggsave("Daily_USD-MXN_5years.png")
 ```
 
