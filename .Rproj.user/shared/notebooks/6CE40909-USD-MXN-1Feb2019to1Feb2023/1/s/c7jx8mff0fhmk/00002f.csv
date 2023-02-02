@@ -1,8 +1,0 @@
-"0","# Use this R-Chunk to plot & visualize your data!"
-"0","price_over_time <- ggplot(data = data, mapping = aes(x = Date, y = Price)) +"
-"0","  geom_line(linewidth = 0.8) +"
-"0","  theme_bw() +"
-"0","  theme(plot.title = element_text(hjust = .5),"
-"0","        plot.subtitle = element_text(hjust = .5)) +"
-"0","  labs(title = ""Daily USD/MXN - US Dollar Mexican Peso Evolution"", subtitle = ""From February 1st, 2019 to February 1st, 2023"", y = ""Price (MXN)"", caption = ""Data from Investing.com"")"
-"0","price_over_time"

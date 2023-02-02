@@ -1,8 +1,8 @@
 ---
 title: "A 5-year comparison of local currency value in Mexico compared to the US dollar"
-subtitle : "From February 1st, 2019 to February 1st, 2023"
+subtitle : "From February 1st, 2018 to February 1st, 2023"
 author: "Felipe Valencia"
-date: "febrero 01, 2023"
+date: "febrero 02, 2023"
 output:
   html_document:  
     keep_md: true
@@ -48,7 +48,8 @@ price_over_time <- ggplot(data = data, mapping = aes(x = Date, y = Price)) +
   theme_bw() +
   theme(plot.title = element_text(hjust = .5),
         plot.subtitle = element_text(hjust = .5)) +
-  labs(title = "Daily USD/MXN - US Dollar Mexican Peso Evolution", subtitle = "From February 1st, 2019 to February 1st, 2023", y = "Price (MXN)", caption = "Data from Investing.com")
+  labs(title = "Daily USD/MXN - US Dollar Mexican Peso Evolution", subtitle = "From February 1st, 2018 to February 1st, 2023", y = "Price (MXN)", caption = "Data from Investing.com") +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
 price_over_time
 ```
 
@@ -60,4 +61,4 @@ price_over_time
 
 ## Conclusions
 
-We can see the evolution of the USD/MXN for the last 5 years and we notice a huge increase in ealry 2020, perfectly aligning with Covid-19 outbreak.
+We can see the evolution of the USD/MXN for the last 5 years and we notice a huge increase in early 2020, perfectly aligning with Covid-19 outbreak.
