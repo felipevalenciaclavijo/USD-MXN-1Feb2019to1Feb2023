@@ -1,4 +1,4 @@
-# USD/MXN Feb 1st, 2019 to Feb 1st, 2023
+# USD/MXN Feb 1st, 2018 to Feb 1st, 2023
 
 A 5-year comparison of local currency value in Mexico compared to the US dollar using [Investing.com](https://www.investing.com/currencies/usd-mxn-historical-data) daily data on USD/MXN.
 
